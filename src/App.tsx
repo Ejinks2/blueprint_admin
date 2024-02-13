@@ -1,24 +1,24 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Box, Container, Spinner } from '@chakra-ui/react'
 
 function App (): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{ height: '100vh' }}>
+      <Container height="100%" display="flex" justifyContent="center" alignItems="center">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100px"
         >
-          Learn React
-        </a>
-      </header>
+          <Spinner
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='blue.500'
+            size='xl'
+          />
+        </Box>
+      </Container>
     </div>
   )
 }
