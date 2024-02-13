@@ -1,4 +1,4 @@
-import axios, { type AxiosRequestConfig } from 'axios'
+import axios, { type AxiosRequestConfig, type Method, type AxiosResponse } from 'axios'
 
 const apiClient = axios.create({
   baseURL: 'http://localhost:8080',
@@ -8,4 +8,8 @@ const apiClient = axios.create({
   }
 } satisfies AxiosRequestConfig)
 
-export default apiClient
+const request = async (method: Method, url: string, params?: unknown): Promise<AxiosResponse> => {
+  return await apiClient.request({ method, url, params })
+}
+
+export default request
