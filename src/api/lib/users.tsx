@@ -2,21 +2,17 @@ import { type AxiosResponse } from 'axios'
 import request from '../apiClient'
 
 export const getAllUsers = async (): Promise<AxiosResponse> => {
-  return await request('GET', '/')
+  return await request('GET', '/v1/users/all')
 }
 
-export const getUser = async (id: string): Promise<AxiosResponse> => {
-  return await request('GET', `/${id}`)
+export const addUser = async (user: unknown): Promise<AxiosResponse> => {
+  return await request('POST', '/v1/users/user', JSON.stringify(user))
 }
 
-export const createUser = async (user: unknown): Promise<AxiosResponse> => {
-  return await request('POST', '/', JSON.stringify(user))
+export const updateUser = async (username: string, user: unknown): Promise<AxiosResponse> => {
+  return await request('PUT', `/v1/users/user?username=${username}`, JSON.stringify(user))
 }
 
-export const updateUser = async (id: string, user: unknown): Promise<AxiosResponse> => {
-  return await request('PUT', `/${id}`, JSON.stringify(user))
-}
-
-export const deleteUser = async (id: string): Promise<AxiosResponse> => {
-  return await request('DELETE', `/${id}`)
+export const deleteUser = async (username: string): Promise<AxiosResponse> => {
+  return await request('DELETE', `/v1/users/user?username=${username}`)
 }
