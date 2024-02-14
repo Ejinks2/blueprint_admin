@@ -5,6 +5,10 @@ export const getAllUsers = async (): Promise<AxiosResponse> => {
   return await request('GET', '/v1/users/all')
 }
 
+export const getUser = async (username: string): Promise<AxiosResponse> => {
+  return await request('GET', `/v1/users/user?username=${username}`)
+}
+
 export const addUser = async (user: unknown): Promise<AxiosResponse> => {
   return await request('POST', '/v1/users/user', JSON.stringify(user))
 }
