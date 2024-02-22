@@ -1,45 +1,66 @@
-import { Box, Flex, HStack, VStack, Button, Image, Text } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Box, Flex, HStack, VStack, Button, Image, Text, Link as ChakraLink } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import HomeIcon from './icons/HomeIcon'
+import DashboardIcon from './icons/Dashboard'
+import BlogIcon from './icons/BlogIcon'
+import CollapseIcon from './icons/CollapseIcon'
+import ExpandIcon from './icons/ExpandIcon'
+import Logo from '../assets/images/logo_negative.png'
 
 function Sidebar (): JSX.Element {
   const [hidden, setHidden] = useState(false)
 
   return (
-    <>
+    <Flex width="fit-content" height="100%" position="relative">
       <motion.nav
         initial={hidden}
         animate={{ width: hidden ? 0 : '300px' }}
         transition={{ ease: 'easeOut', duration: 0.3 }}
       >
-        <Flex width="100%" height="100%" backgroundColor="blue.500" direction="column" justifyContent="space-between" color="white">
+        <Flex height="100%" backgroundColor="blue.500" direction="column" justifyContent="space-between" color="white" overflow="hidden">
           <Box>
-            <HStack padding="16px">
-              <Image src='' alt="Blueprint Logo" boxSize="100px"></Image>
-              <Text fontSize="4xl">Blueprint</Text>
+            <HStack padding="16px" columnGap="20px">
+              <Image src={Logo} alt="Blueprint Logo" boxSize="80px" minWidth="80px"></Image>
+              <Text fontSize="4xl" height="45px">Blueprint</Text>
             </HStack>
             <VStack paddingX="8px" spacing="15px" align="left">
-              <Button colorScheme="whiteAlpha" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid">Home</Button>
-              <Button colorScheme="whiteAlpha" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid">Dashboard</Button>
-              <Button colorScheme="whiteAlpha" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid">Blog</Button>
+              <ChakraLink as={ReactRouterLink} to='/' _hover={{ textDecoration: 'none' }}>
+                <Button leftIcon={<HomeIcon />} colorScheme="whiteAlpha" width="100%" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid" display="flex">
+                  <Text alignSelf="flex-end">Home</Text>
+                </Button>
+              </ChakraLink>
+              <ChakraLink as={ReactRouterLink} to='/dashboard' _hover={{ textDecoration: 'none' }}>
+                <Button leftIcon={<DashboardIcon />} colorScheme="whiteAlpha" width="100%" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid" display="flex">
+                  <Text alignSelf="flex-end">Dashboard</Text>
+                </Button>
+              </ChakraLink>
+              <ChakraLink as={ReactRouterLink} to='/blog' _hover={{ textDecoration: 'none' }}>
+                <Button leftIcon={<BlogIcon />} colorScheme="whiteAlpha" width="100%" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid" display="flex">
+                  <Text alignSelf="flex-end">Blog</Text>
+                </Button>
+              </ChakraLink>
             </VStack>
           </Box>
           <Box>
             <Box paddingX="8px">
-              <Button onClick={() => { setHidden(!hidden) }} width="100%" colorScheme="whiteAlpha" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid">Collapse</Button>
+              <Button onClick={() => { setHidden(!hidden) }} leftIcon={<CollapseIcon />} width="100%" colorScheme="whiteAlpha" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid" display="flex">
+                <Text alignSelf="flex-end">Collapse</Text>
+              </Button>
             </Box>
             <HStack padding="16px">
-              <Image boxSize="50px" borderRadius="full" src='' alt="User Image"></Image>
-              <Flex direction="column">
-                <Text fontSize="md">John Doe</Text>
-                <Text fontSize="md">jdoe@stevensblueprint.com</Text>
+              <Image src='' alt="User Image" boxSize="50px" minWidth="50px" borderRadius="full"></Image>
+              <Flex direction="column" overflow="hidden">
+                <Text fontSize="md" noOfLines={1}>Username</Text>
+                <Text fontSize="md" noOfLines={1}>email@stevensblueprint.com</Text>
               </Flex>
             </HStack>
           </Box>
         </Flex>
       </motion.nav>
-      <Button onClick={() => { setHidden(!hidden) }}>Toggle</Button>
-    </>
+      <Button onClick={() => { setHidden(!hidden) }} leftIcon={<ExpandIcon />} colorScheme="none" backgroundColor="transparent" color="black" position="absolute" right="-50px"></Button>
+    </Flex>
   )
 }
 
