@@ -30,7 +30,7 @@ To run the application
 ```
 npm install
 ```
-
+2. Run the application
 ```
 npm run start
 ```
