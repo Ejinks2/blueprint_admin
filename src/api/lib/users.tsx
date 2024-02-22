@@ -21,3 +21,7 @@ export const updateUser = async (username: string, user: User): Promise<AxiosRes
 export const deleteUser = async (username: string): Promise<AxiosResponse> => {
   return await request('DELETE', `/v1/users/user?username=${username}`)
 }
+
+export const getMemberSizeWeeklyChange = async (): Promise<AxiosResponse> => {
+  return await request('GET', '/v1/users/member-size-weekly-change')
+}
