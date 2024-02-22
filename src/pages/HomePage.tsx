@@ -1,6 +1,13 @@
+import { Container } from '@chakra-ui/react'
+import TableDashboard from '../components/TableDashboard'
+
 function HomePage (): JSX.Element {
   return (
-        <div></div>
+        <div>
+            <Container>
+                <TableDashboard />
+            </Container>
+        </div>
   )
 }
 
