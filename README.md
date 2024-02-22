@@ -26,6 +26,11 @@ In the repo, submit a pr.
 
 ## How to run the application
 To run the application
+1. Install all the dependencies
+```
+npm install
+```
+2. Run the application
 ```
 npm run start
 ```
