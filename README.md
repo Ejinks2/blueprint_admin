@@ -18,6 +18,11 @@ Commit your changes
 ```
 git commit -m "Commit message"
 ```
+Before pushing your changes you have to run the linter. (The linter will
+make sure your code if following standard code styling)
+```
+npm run lint
+```
 Push your changes
 ```
 git push --set-upstream origin {branch_name}
