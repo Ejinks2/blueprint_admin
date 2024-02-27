@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import HomeIcon from './icons/HomeIcon'
 import DashboardIcon from './icons/Dashboard'
 import BlogIcon from './icons/BlogIcon'
-import CollapseIcon from './icons/CollapseIcon'
 import ExpandIcon from './icons/ExpandIcon'
 import Logo from '../assets/images/logo_negative.png'
 
@@ -23,7 +22,6 @@ function Sidebar (): JSX.Element {
           <Box>
             <HStack padding="16px" columnGap="20px">
               <Image src={Logo} alt="Blueprint Logo" boxSize="80px" minWidth="80px"></Image>
-              <Text fontSize="4xl" height="45px">Blueprint</Text>
             </HStack>
             <VStack paddingX="8px" spacing="15px" align="left">
               <ChakraLink as={ReactRouterLink} to='/' _hover={{ textDecoration: 'none' }}>
@@ -42,20 +40,6 @@ function Sidebar (): JSX.Element {
                 </Button>
               </ChakraLink>
             </VStack>
-          </Box>
-          <Box>
-            <Box paddingX="8px">
-              <Button onClick={() => { setHidden(!hidden) }} leftIcon={<CollapseIcon />} width="100%" colorScheme="whiteAlpha" padding="8px" justifyContent="start" backgroundColor="transparent" variant="solid" display="flex">
-                <Text alignSelf="flex-end">Collapse</Text>
-              </Button>
-            </Box>
-            <HStack padding="16px">
-              <Image src='' alt="User Image" boxSize="50px" minWidth="50px" borderRadius="full"></Image>
-              <Flex direction="column" overflow="hidden">
-                <Text fontSize="md" noOfLines={1}>Username</Text>
-                <Text fontSize="md" noOfLines={1}>email@stevensblueprint.com</Text>
-              </Flex>
-            </HStack>
           </Box>
         </Flex>
       </motion.nav>
