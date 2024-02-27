@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  user_management:
+    image: ghcr.io/stevensblueprint/user_management:latest
+    ports:
+      - "8080:8080"
+    restart: always
+
+  blueprint_admin:
+    build: ./
+    ports:
+      - "3000:80"
