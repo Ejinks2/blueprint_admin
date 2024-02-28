@@ -1,0 +1,23 @@
+{
+    "Users": {
+        "user1": {
+            "Disabled": false,
+            "Displayname": "Blueprint User 1",
+            "Password": "existingpassword",
+            "Email": "user1@blueprint.com",
+            "Groups": [
+                "admin",
+                "dev"
+            ]
+        },
+        "user2": {
+            "Disabled": true,
+            "Displayname": "Blueprint User 2",
+            "Password": "existingpassword",
+            "Email": "user2@blueprint.com",
+            "Groups": [
+                "admin"
+            ]
+        }
+    }
+}
