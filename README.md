@@ -30,6 +30,10 @@ The Blueprint Admin will provide means for Blueprint members to do the following
 - Remove members from a team
 - Add new members to a team
 
+### Manage Blueprint Budget
+- Be able to create events and assign a budget to them
+- Display a graph of how much budget is left throught the semester
+
 # How to contribute
 Download the repo
 ```
