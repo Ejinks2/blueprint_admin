@@ -1,5 +1,6 @@
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from '@chakra-ui/react'
 import React from 'react'
+// eslint-disable-next-line import/extensions
 import sampleUserData from '../sample_data.json'
 
 function TableDashboard (): JSX.Element {
