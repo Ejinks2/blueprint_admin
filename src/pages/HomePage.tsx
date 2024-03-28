@@ -25,8 +25,8 @@ function HomePage (): JSX.Element {
     <HStack height="100vh" spacing="0">
       <Sidebar />
       <Container>
-      {error && <Text color="red.500">{error}</Text>}
       {isLoading ? <Center> <Spinner size="xl"/> </Center> : <TableDashboard members={members} />}
+      {error && <Text color="red.500">{error}</Text>}
       </Container>
     </HStack>
   )
