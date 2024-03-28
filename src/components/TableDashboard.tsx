@@ -1,17 +1,8 @@
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from '@chakra-ui/react'
-import { getAllUsers } from '../api/lib/users'
 import { type User } from '../types/index'
 import React from 'react'
 
-function TableDashboard (): JSX.Element {
-  const [members, setMembers] = React.useState<User[]>([])
-
-  React.useEffect(() => {
-    void getAllUsers().then((response) => {
-      setMembers(response.data as User[])
-    })
-  }, [])
-
+function TableDashboard ({ members }: { members: User[] }): JSX.Element {
   return (
     <TableContainer>
       <Table variant="simple" size='md'>
@@ -25,10 +16,10 @@ function TableDashboard (): JSX.Element {
         </Thead>
         <Tbody>
           {members
-            .sort((a, b) => {
+            .sort((a: User, b: User) => {
               return a.displayName.localeCompare(b.displayName)
-            }).filter((user) => !user.enabled)
-            .map(({ displayName, email, enabled }) =>
+            }).filter((user: User) => !user.enabled)
+            .map(({ displayName, email, enabled }: User) => // Add type annotation for User
               <Tr key={email}>
                 <Th>{displayName}</Th>
                 <Th>{email}</Th>
