@@ -11,8 +11,13 @@ export const getAllUsers = async (): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(`${API_NAME} Error: ${error.message}`, error.response?.data)
-      throw new Error(`${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`)
+      console.error(
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
+      )
+      throw new Error(
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+      )
     }
     throw new Error('Unknown Error')
   }
@@ -24,8 +29,13 @@ export const getUser = async (userId: string): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(`${API_NAME} Error: ${error.message}`, error.response?.data)
-      throw new Error(`${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`)
+      console.error(
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
+      )
+      throw new Error(
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+      )
     }
     throw new Error('Unknown Error')
   }
@@ -37,8 +47,13 @@ export const addUser = async (user: User): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(`${API_NAME} Error: ${error.message}`, error.response?.data)
-      throw new Error(`${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`)
+      console.error(
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
+      )
+      throw new Error(
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+      )
     }
     throw new Error('Unknown Error')
   }
@@ -50,8 +65,13 @@ export const updateUser = async (user: User): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(`${API_NAME} Error: ${error.message}`, error.response?.data)
-      throw new Error(`${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`)
+      console.error(
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
+      )
+      throw new Error(
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+      )
     }
     throw new Error('Unknown Error')
   }
@@ -63,8 +83,13 @@ export const deleteUser = async (userId: string): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(`${API_NAME} Error: ${error.message}`, error.response?.data)
-      throw new Error(`${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`)
+      console.error(
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
+      )
+      throw new Error(
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+      )
     }
     throw new Error('Unknown Error')
   }

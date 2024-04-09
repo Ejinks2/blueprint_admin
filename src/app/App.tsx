@@ -9,11 +9,11 @@ function App (): JSX.Element {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/blog' element={<BlogPage />} />
-        <Route path='/applications' element={<ApplicationsPage />} />
-        <Route path='/budget' element={<BudgetPage />} />
-        <Route path='/team/:teamName' element={<TeamPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/applications" element={<ApplicationsPage />} />
+        <Route path="/budget" element={<BudgetPage />} />
+        <Route path="/team/:teamName" element={<TeamPage />} />
       </Routes>
     </div>
   )

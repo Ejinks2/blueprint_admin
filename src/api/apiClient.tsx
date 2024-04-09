@@ -1,4 +1,8 @@
-import axios, { type AxiosRequestConfig, type Method, type AxiosResponse } from 'axios'
+import axios, {
+  type AxiosRequestConfig,
+  type Method,
+  type AxiosResponse
+} from 'axios'
 
 const apiClient = axios.create({
   baseURL: 'https://dev.api.sitblueprint.com/api/v1',
@@ -8,7 +12,11 @@ const apiClient = axios.create({
   }
 } satisfies AxiosRequestConfig)
 
-const request = async (method: Method, url: string, params?: unknown): Promise<AxiosResponse> => {
+const request = async (
+  method: Method,
+  url: string,
+  params?: unknown
+): Promise<AxiosResponse> => {
   return await apiClient.request({ method, url, params })
 }
 

@@ -5,7 +5,7 @@ import React from 'react'
 function TableDashboard ({ members }: { members: User[] }): JSX.Element {
   return (
     <TableContainer>
-      <Table variant="simple" size='md'>
+      <Table variant="simple" size="md">
         <Thead>
           <Tr>
             <Th>Name</Th>
@@ -18,14 +18,19 @@ function TableDashboard ({ members }: { members: User[] }): JSX.Element {
           {members
             .sort((a: User, b: User) => {
               return a.name.localeCompare(b.name)
-            }).filter((user: User) => !user.isEnabled)
-            .map(({ name, email, isEnabled }: User) => // Add type annotation for User
-              <Tr key={email}>
-                <Th>{name}</Th>
-                <Th>{email}</Th>
-                <Th></Th>
-                <Th>{isEnabled ? 'Active' : 'Inactive'}</Th>
-              </Tr>
+            })
+            .filter((user: User) => !user.isEnabled)
+            .map(
+              (
+                { name, email, isEnabled }: User // Add type annotation for User
+              ) => (
+                <Tr key={email}>
+                  <Th>{name}</Th>
+                  <Th>{email}</Th>
+                  <Th></Th>
+                  <Th>{isEnabled ? 'Active' : 'Inactive'}</Th>
+                </Tr>
+              )
             )}
         </Tbody>
       </Table>
