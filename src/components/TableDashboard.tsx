@@ -17,14 +17,14 @@ function TableDashboard ({ members }: { members: User[] }): JSX.Element {
         <Tbody>
           {members
             .sort((a: User, b: User) => {
-              return a.displayName.localeCompare(b.displayName)
-            }).filter((user: User) => !user.enabled)
-            .map(({ displayName, email, enabled }: User) => // Add type annotation for User
+              return a.name.localeCompare(b.name)
+            }).filter((user: User) => !user.isEnabled)
+            .map(({ name, email, isEnabled }: User) => // Add type annotation for User
               <Tr key={email}>
-                <Th>{displayName}</Th>
+                <Th>{name}</Th>
                 <Th>{email}</Th>
                 <Th></Th>
-                <Th>{enabled ? 'Inactive' : 'Active'}</Th>
+                <Th>{isEnabled ? 'Active' : 'Inactive'}</Th>
               </Tr>
             )}
         </Tbody>
