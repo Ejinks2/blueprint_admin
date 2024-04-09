@@ -5,5 +5,5 @@ export interface Team {
   teamLead: string
   productManager: string
   dateCreated: string
-  teamClass: string
+  teamClass: number
 }
