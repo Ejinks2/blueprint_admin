@@ -3,7 +3,7 @@ import request from '../apiClient'
 import type { User } from '../../types/index'
 
 const API_NAME = 'Blueprint Backend API'
-const BASE = '/user/'
+const BASE = '/users/'
 
 export const getAllUsers = async (): Promise<AxiosResponse> => {
   try {
