@@ -9,7 +9,8 @@ const apiClient = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-type': 'application/json'
-  }
+  },
+  withCredentials: true
 } satisfies AxiosRequestConfig)
 
 const request = async (
