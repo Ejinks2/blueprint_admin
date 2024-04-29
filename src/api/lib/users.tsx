@@ -3,7 +3,7 @@ import request from '../apiClient'
 import type { User } from '../../types/index'
 
 const API_NAME = 'Blueprint Backend API'
-const BASE = '/users/'
+const BASE = '/user/'
 
 export const getAllUsers = async (): Promise<AxiosResponse> => {
   try {
@@ -11,6 +11,7 @@ export const getAllUsers = async (): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
+      console.log('error', error)
       console.error(
         `${API_NAME} Error: ${error.message}`,
         error.response?.data
@@ -19,6 +20,7 @@ export const getAllUsers = async (): Promise<AxiosResponse> => {
         `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
       )
     }
+    console.error('Unknown Error')
     throw new Error('Unknown Error')
   }
 }

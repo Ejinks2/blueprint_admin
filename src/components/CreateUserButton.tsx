@@ -12,51 +12,51 @@ import {
   Input,
   useDisclosure,
   Alert,
-  AlertIcon
-} from '@chakra-ui/react'
-import React, { useState } from 'react'
+  AlertIcon,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
 
-function CreateUserButton ({
-  setDisplaySuccess
+function CreateUserButton({
+  setDisplaySuccess,
 }: {
-  displaySuccess: boolean
-  setDisplaySuccess: React.Dispatch<React.SetStateAction<boolean>>
+  displaySuccess: boolean;
+  setDisplaySuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }): JSX.Element {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
-  const [formData, setFormData] = useState({ email: '', roles: '' })
-  const [displayError, setDisplayError] = useState(false)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
+  const [formData, setFormData] = useState({ email: "", roles: "" });
+  const [displayError, setDisplayError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    event.preventDefault()
-    console.log('Form submitted', formData)
+    event.preventDefault();
+    console.log("Form submitted", formData);
 
     const simulateApiCall = async (): Promise<void> => {
       await new Promise<void>((resolve, reject) => {
-        const apiState = true
+        const apiState = true;
         if (!apiState) {
-          reject(new Error('API call failed'))
+          reject(new Error("API call failed"));
         } else {
-          resolve()
+          resolve();
         }
-      })
-    }
+      });
+    };
     simulateApiCall()
       .then(() => {
-        setDisplaySuccess(true)
-        onClose()
+        setDisplaySuccess(true);
+        onClose();
       })
       .catch((error) => {
-        setDisplayError(true)
-        console.error(error)
-      })
-  }
+        setDisplayError(true);
+        console.error(error);
+      });
+  };
 
   return (
     <>
@@ -113,7 +113,7 @@ function CreateUserButton ({
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 
-export default CreateUserButton
+export default CreateUserButton;

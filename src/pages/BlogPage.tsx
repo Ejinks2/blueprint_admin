@@ -1,5 +1,5 @@
-function BlogPage (): JSX.Element {
-  return <div></div>
+function BlogPage(): JSX.Element {
+  return <div></div>;
 }
 
-export default BlogPage
+export default BlogPage;

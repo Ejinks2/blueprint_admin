@@ -3,21 +3,21 @@ import {
   StatLabel,
   StatNumber,
   StatHelpText,
-  StatArrow
-} from '@chakra-ui/react'
+  StatArrow,
+} from "@chakra-ui/react";
 
 interface MetricCardProps {
-  label: string
-  statistic: string | number
-  changePercentage: string | number
-  change: 'increase' | 'decrease'
+  label: string;
+  statistic: string | number;
+  changePercentage: string | number;
+  change: "increase" | "decrease";
 }
 
-function MetricCard ({
+function MetricCard({
   label,
   statistic,
   changePercentage,
-  change
+  change,
 }: MetricCardProps): JSX.Element {
   return (
     <Stat>
@@ -28,7 +28,7 @@ function MetricCard ({
         {changePercentage.toLocaleString()}
       </StatHelpText>
     </Stat>
-  )
+  );
 }
 
-export default MetricCard
+export default MetricCard;

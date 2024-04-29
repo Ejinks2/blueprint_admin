@@ -5,7 +5,7 @@ import axios, {
 } from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://auth.api.sitblueprint.com/api/v1',
+  baseURL: 'https://localhost:8080/api/v1',
   headers: {
     Accept: 'application/json',
     'Content-type': 'application/json'
