@@ -1,6 +1,6 @@
-import { Icon } from '@chakra-ui/react'
+import { Icon } from "@chakra-ui/react";
 
-function ExpandIcon (): JSX.Element {
+function ExpandIcon(): JSX.Element {
   return (
     <Icon
       fill="none"
@@ -14,7 +14,7 @@ function ExpandIcon (): JSX.Element {
         d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
       />
     </Icon>
-  )
+  );
 }
 
-export default ExpandIcon
+export default ExpandIcon;

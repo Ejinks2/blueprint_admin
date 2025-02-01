@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-import BlogPage from '../pages/BlogPage'
-import ApplicationsPage from '../pages/ApplicatiosPage'
-import BudgetPage from '../pages/BudgetPage'
-import TeamPage from '../pages/TeamPage'
+import { Routes, Route } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import BlogPage from "../pages/BlogPage";
+import ApplicationsPage from "../pages/ApplicatiosPage";
+import BudgetPage from "../pages/BudgetPage";
+import TeamPage from "../pages/TeamPage";
 
-function App (): JSX.Element {
+function App(): JSX.Element {
   return (
     <div>
       <Routes>
@@ -16,7 +16,7 @@ function App (): JSX.Element {
         <Route path="/team/:teamName" element={<TeamPage />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

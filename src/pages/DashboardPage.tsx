@@ -1,9 +1,9 @@
-import CreateUserButton from '../components/CreateUserButton'
-import { Alert, AlertIcon, VStack, Flex, Spacer } from '@chakra-ui/react'
-import { useState } from 'react'
+import CreateUserButton from "../components/CreateUserButton";
+import { Alert, AlertIcon, VStack, Flex, Spacer } from "@chakra-ui/react";
+import { useState } from "react";
 
-function DashboardPage (): JSX.Element {
-  const [displaySuccess, setDisplaySuccess] = useState(false)
+function DashboardPage(): JSX.Element {
+  const [displaySuccess, setDisplaySuccess] = useState(false);
   return (
     <VStack align="stretch">
       <Flex>
@@ -29,7 +29,7 @@ function DashboardPage (): JSX.Element {
         </Flex>
       )}
     </VStack>
-  )
+  );
 }
 
-export default DashboardPage
+export default DashboardPage;
