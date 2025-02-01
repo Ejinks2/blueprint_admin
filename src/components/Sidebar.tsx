@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { useState } from 'react'
+import { Link as ReactRouterLink } from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -8,24 +8,24 @@ import {
   Button,
   Image,
   Text,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import HomeIcon from "./icons/HomeIcon";
-import DashboardIcon from "./icons/Dashboard";
-import BlogIcon from "./icons/BlogIcon";
-import ExpandIcon from "./icons/ExpandIcon";
-import Logo from "../assets/images/logo_negative.png";
+  Link as ChakraLink
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import HomeIcon from './icons/HomeIcon'
+import DashboardIcon from './icons/Dashboard'
+import BlogIcon from './icons/BlogIcon'
+import ExpandIcon from './icons/ExpandIcon'
+import Logo from '../assets/images/logo_negative.png'
 
-function Sidebar(): JSX.Element {
-  const [hidden, setHidden] = useState(false);
+function Sidebar (): JSX.Element {
+  const [hidden, setHidden] = useState(false)
 
   return (
     <Flex width="fit-content" height="100%" position="relative">
       <motion.nav
         initial={hidden}
-        animate={{ width: hidden ? 0 : "300px" }}
-        transition={{ ease: "easeOut", duration: 0.3 }}
+        animate={{ width: hidden ? 0 : '300px' }}
+        transition={{ ease: 'easeOut', duration: 0.3 }}
       >
         <Flex
           height="100%"
@@ -48,7 +48,7 @@ function Sidebar(): JSX.Element {
               <ChakraLink
                 as={ReactRouterLink}
                 to="/"
-                _hover={{ textDecoration: "none" }}
+                _hover={{ textDecoration: 'none' }}
               >
                 <Button
                   leftIcon={<HomeIcon />}
@@ -66,7 +66,7 @@ function Sidebar(): JSX.Element {
               <ChakraLink
                 as={ReactRouterLink}
                 to="/dashboard"
-                _hover={{ textDecoration: "none" }}
+                _hover={{ textDecoration: 'none' }}
               >
                 <Button
                   leftIcon={<DashboardIcon />}
@@ -84,7 +84,7 @@ function Sidebar(): JSX.Element {
               <ChakraLink
                 as={ReactRouterLink}
                 to="/blog"
-                _hover={{ textDecoration: "none" }}
+                _hover={{ textDecoration: 'none' }}
               >
                 <Button
                   leftIcon={<BlogIcon />}
@@ -105,7 +105,7 @@ function Sidebar(): JSX.Element {
       </motion.nav>
       <Button
         onClick={() => {
-          setHidden(!hidden);
+          setHidden(!hidden)
         }}
         leftIcon={<ExpandIcon />}
         colorScheme="none"
@@ -115,7 +115,7 @@ function Sidebar(): JSX.Element {
         right="-50px"
       ></Button>
     </Flex>
-  );
+  )
 }
 
-export default Sidebar;
+export default Sidebar

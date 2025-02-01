@@ -1,5 +1,5 @@
-function UserCard(): JSX.Element {
-  return <div></div>;
+function UserCard (): JSX.Element {
+  return <div></div>
 }
 
-export default UserCard;
+export default UserCard

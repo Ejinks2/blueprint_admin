@@ -10,8 +10,13 @@ export const getAllTeams = async (): Promise<AxiosResponse> => {
     return response
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(`${API_NAME} Error: ${error.message}`, error.response?.data)
-      throw new Error(`${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`)
+      console.error(
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
+      )
+      throw new Error(
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+      )
     }
     throw new Error('Unknown Error')
   }
@@ -24,11 +29,11 @@ export const getTeam = async (teamId: string): Promise<AxiosResponse> => {
   } catch (error) {
     if (error instanceof AxiosError) {
       console.error(
-          `${API_NAME} Error: ${error.message}`,
-          error.response?.data
+        `${API_NAME} Error: ${error.message}`,
+        error.response?.data
       )
       throw new Error(
-          `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
       )
     }
     throw new Error('Unknown Error')

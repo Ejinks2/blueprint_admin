@@ -1,5 +1,5 @@
-function BudgetPage(): JSX.Element {
-  return <div></div>;
+function BudgetPage (): JSX.Element {
+  return <div></div>
 }
 
-export default BudgetPage;
+export default BudgetPage
