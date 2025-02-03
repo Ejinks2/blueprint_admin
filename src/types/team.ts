@@ -1,9 +1,11 @@
+import { Organization } from "./organization";
+import { Member } from "./member";
+
 export interface Team {
   id: string;
   name: string;
-  members: string[];
-  teamLead: string;
-  productManager: string;
-  dateCreated: string;
-  teamClass: number;
+  organization: Organization;
+  teamLeadId: Member;
+  projectManagerId: Member;
+  designer: Member;
 }

@@ -1,26 +1,27 @@
 import { Center, Container, HStack, Spinner, Text } from "@chakra-ui/react";
 import TableDashboard from "../components/TableDashboard";
 import Sidebar from "../components/Sidebar";
-import { getAllUsers } from "../api/lib/users";
-import { type User } from "../types/index";
 import React, { useEffect, useState } from "react";
+import { Member } from "../types/member";
+import { getAllMembers } from "../api/lib/member";
 
 function HomePage(): JSX.Element {
-  const [members, setMembers] = React.useState<User[]>([]);
+  const [members, setMembers] = React.useState<Member[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    void getAllUsers()
-      .then((response) => {
-        setMembers(response.data as User[]);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError("Failed to load Blueprint members. Please try again later.");
-        setIsLoading(false);
-      });
+    const fetchAllMembers = async () => {
+      getAllMembers()
+        .then((response) => {
+          setMembers(response.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+    };
+    fetchAllMembers();
   }, []);
 
   return (

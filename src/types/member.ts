@@ -1,11 +1,9 @@
-export interface User {
+export interface Member {
   id: string;
-  teamId: string;
   name: string;
   username: string;
   email: string;
-  password: string;
-  isActivate: boolean;
+  isActive: boolean;
   dateJoined: string;
   roles: string[];
   team: string;
