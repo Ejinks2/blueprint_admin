@@ -1,6 +1,7 @@
 import { Member } from "../types/member";
 import { Team } from "../types/team";
 import { Organization } from "../types/organization";
+import { Event } from "../types/events";
 
 const members: Member[] = [
   {
@@ -78,3 +79,48 @@ const teams: Team[] = [
     designer: members[2],
   },
 ];
+
+const events: Event[] = [
+  {
+    name: "Tech Conference 2025",
+    organizer: "Alice Johnson",
+    date: "03/15/2025",
+    location: "San Francisco, CA",
+    budget: 50000,
+    eventType: "workshop",
+  },
+  {
+    name: "Monthly Team Meeting",
+    organizer: "Bob Smith",
+    date: "02/10/2025",
+    location: "Virtual (Zoom)",
+    budget: 0,
+    eventType: "meeting",
+  },
+  {
+    name: "Annual Hackathon",
+    organizer: "Charlie Brown",
+    date: "07/20/2025",
+    location: "New York City, NY",
+    budget: 75000,
+    eventType: "gmb",
+  },
+  {
+    name: "Design Thinking Workshop",
+    organizer: "Diana White",
+    date: "05/05/2025",
+    location: "Seattle, WA",
+    budget: 15000,
+    eventType: "workshop",
+  },
+  {
+    name: "Company Holiday Party",
+    organizer: "HR Team",
+    date: "12/18/2025",
+    location: "Los Angeles, CA",
+    budget: 30000,
+    eventType: "gmb",
+  },
+];
+
+export { members, organizations, teams, events };
