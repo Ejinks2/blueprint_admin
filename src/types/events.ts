@@ -1,6 +1,8 @@
+import { Member } from "./member";
+
 export interface Event {
   name: string;
-  organizer: string;
+  organizer: Member;
   date: string; // Format: MM/DD/YYYY
   location: string;
   budget: number;

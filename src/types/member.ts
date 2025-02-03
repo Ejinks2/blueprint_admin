@@ -1,3 +1,5 @@
+import { Team } from "./team";
+
 export interface Member {
   id: string;
   name: string;
@@ -6,5 +8,5 @@ export interface Member {
   isActive: boolean;
   dateJoined: string;
   roles: string[];
-  team: string;
+  team: Team;
 }

@@ -12,7 +12,7 @@ const members: Member[] = [
     isActive: true,
     dateJoined: "2023-04-15",
     roles: ["Developer", "Frontend"],
-    team: "UI Team",
+    team: {} as Team,
   },
   {
     id: "2",
@@ -22,7 +22,7 @@ const members: Member[] = [
     isActive: true,
     dateJoined: "2022-08-22",
     roles: ["Project Manager"],
-    team: "Backend Team",
+    team: {} as Team,
   },
   {
     id: "3",
@@ -32,7 +32,7 @@ const members: Member[] = [
     isActive: false,
     dateJoined: "2021-05-10",
     roles: ["Designer"],
-    team: "UI Team",
+    team: {} as Team,
   },
   {
     id: "4",
@@ -42,7 +42,7 @@ const members: Member[] = [
     isActive: true,
     dateJoined: "2020-10-12",
     roles: ["Team Lead", "Backend"],
-    team: "Backend Team",
+    team: {} as Team,
   },
 ];
 
@@ -50,12 +50,14 @@ const organizations: Organization[] = [
   {
     id: "org1",
     name: "Tech Innovators",
+    team: {} as Team,
     teamLeadId: members[3],
     projectManagerId: members[1],
   },
   {
     id: "org2",
     name: "Creative Solutions",
+    team: {} as Team,
     teamLeadId: members[0],
     projectManagerId: members[1],
   },
@@ -80,10 +82,20 @@ const teams: Team[] = [
   },
 ];
 
+// Assign teams to members now that teams are defined
+members[0].team = teams[0];
+members[1].team = teams[1];
+members[2].team = teams[0];
+members[3].team = teams[1];
+
+// Assign teams to organizations now that teams are defined
+organizations[0].team = teams[1];
+organizations[1].team = teams[0];
+
 const events: Event[] = [
   {
     name: "Tech Conference 2025",
-    organizer: "Alice Johnson",
+    organizer: members[0], // Alice Johnson
     date: "03/15/2025",
     location: "San Francisco, CA",
     budget: 50000,
@@ -91,7 +103,7 @@ const events: Event[] = [
   },
   {
     name: "Monthly Team Meeting",
-    organizer: "Bob Smith",
+    organizer: members[1], // Bob Smith
     date: "02/10/2025",
     location: "Virtual (Zoom)",
     budget: 0,
@@ -99,7 +111,7 @@ const events: Event[] = [
   },
   {
     name: "Annual Hackathon",
-    organizer: "Charlie Brown",
+    organizer: members[2], // Charlie Brown
     date: "07/20/2025",
     location: "New York City, NY",
     budget: 75000,
@@ -107,7 +119,7 @@ const events: Event[] = [
   },
   {
     name: "Design Thinking Workshop",
-    organizer: "Diana White",
+    organizer: members[3], // Diana White
     date: "05/05/2025",
     location: "Seattle, WA",
     budget: 15000,
@@ -115,7 +127,7 @@ const events: Event[] = [
   },
   {
     name: "Company Holiday Party",
-    organizer: "HR Team",
+    organizer: members[1], // Assuming Bob Smith (or HR team placeholder)
     date: "12/18/2025",
     location: "Los Angeles, CA",
     budget: 30000,
@@ -123,7 +135,7 @@ const events: Event[] = [
   },
   {
     name: "Team Retrospective",
-    organizer: "Bob Smith",
+    organizer: members[1], // Bob Smith
     date: "02/05/2025",
     location: "Virtual (Zoom)",
     budget: 0,
@@ -131,23 +143,15 @@ const events: Event[] = [
   },
   {
     name: "UI/UX Brainstorming Session",
-    organizer: "Charlie Brown",
+    organizer: members[2], // Charlie Brown
     date: "02/08/2025",
     location: "San Francisco, CA",
     budget: 5000,
     eventType: "workshop",
   },
   {
-    name: "Monthly Team Meeting",
-    organizer: "Bob Smith",
-    date: "02/10/2025",
-    location: "Virtual (Zoom)",
-    budget: 0,
-    eventType: "meeting",
-  },
-  {
     name: "Backend Architecture Discussion",
-    organizer: "Diana White",
+    organizer: members[3], // Diana White
     date: "02/14/2025",
     location: "Seattle, WA",
     budget: 2000,
@@ -155,7 +159,7 @@ const events: Event[] = [
   },
   {
     name: "Product Demo Day",
-    organizer: "Alice Johnson",
+    organizer: members[0], // Alice Johnson
     date: "02/18/2025",
     location: "New York City, NY",
     budget: 10000,
@@ -163,7 +167,7 @@ const events: Event[] = [
   },
   {
     name: "Cross-Team Collaboration Workshop",
-    organizer: "Bob Smith",
+    organizer: members[1], // Bob Smith
     date: "02/19/2025",
     location: "Virtual (Zoom)",
     budget: 3000,
