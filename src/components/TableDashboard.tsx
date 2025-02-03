@@ -21,7 +21,7 @@ function TableDashboard({ members }: { members: Member[] }): JSX.Element {
             .filter((user: Member) => !user.isActive)
             .map(
               (
-                { name, email, isActive }: Member // Add type annotation for User
+                { name, email, isActive }: Member, // Add type annotation for User
               ) => (
                 <Tr key={email}>
                   <Th>{name}</Th>
@@ -29,7 +29,7 @@ function TableDashboard({ members }: { members: Member[] }): JSX.Element {
                   <Th></Th>
                   <Th>{isActive ? "Active" : "Inactive"}</Th>
                 </Tr>
-              )
+              ),
             )}
         </Tbody>
       </Table>

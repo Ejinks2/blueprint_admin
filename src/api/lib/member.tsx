@@ -14,10 +14,10 @@ export const getAllMembers = async (): Promise<AxiosResponse<Member[]>> => {
       console.log("error", error);
       console.error(
         `${API_NAME} Error: ${error.message}`,
-        error.response?.data
+        error.response?.data,
       );
       throw new Error(
-        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`,
       );
     }
     console.error("Unknown Error");
@@ -26,7 +26,7 @@ export const getAllMembers = async (): Promise<AxiosResponse<Member[]>> => {
 };
 
 export const getMemberById = async (
-  memberId: string
+  memberId: string,
 ): Promise<AxiosResponse<Member>> => {
   try {
     const response = await request("GET", BASE + `/${memberId}`);
@@ -35,10 +35,10 @@ export const getMemberById = async (
     if (error instanceof AxiosError) {
       console.error(
         `${API_NAME} Error: ${error.message}`,
-        error.response?.data
+        error.response?.data,
       );
       throw new Error(
-        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`,
       );
     }
     throw new Error("Unknown Error");
@@ -46,7 +46,7 @@ export const getMemberById = async (
 };
 
 export const addMember = async (
-  user: Member
+  user: Member,
 ): Promise<AxiosResponse<Member>> => {
   try {
     const response = await request("POST", BASE, JSON.stringify(user));
@@ -55,10 +55,10 @@ export const addMember = async (
     if (error instanceof AxiosError) {
       console.error(
         `${API_NAME} Error: ${error.message}`,
-        error.response?.data
+        error.response?.data,
       );
       throw new Error(
-        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`,
       );
     }
     throw new Error("Unknown Error");
@@ -66,7 +66,7 @@ export const addMember = async (
 };
 
 export const updateMember = async (
-  user: Member
+  user: Member,
 ): Promise<AxiosResponse<Member>> => {
   try {
     const response = await request("PUT", BASE, JSON.stringify(user));
@@ -75,10 +75,10 @@ export const updateMember = async (
     if (error instanceof AxiosError) {
       console.error(
         `${API_NAME} Error: ${error.message}`,
-        error.response?.data
+        error.response?.data,
       );
       throw new Error(
-        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`,
       );
     }
     throw new Error("Unknown Error");
@@ -86,7 +86,7 @@ export const updateMember = async (
 };
 
 export const deleteUser = async (
-  memberId: string
+  memberId: string,
 ): Promise<AxiosResponse<void>> => {
   try {
     const response = await request("DELETE", BASE + `/${memberId}`);
@@ -95,10 +95,10 @@ export const deleteUser = async (
     if (error instanceof AxiosError) {
       console.error(
         `${API_NAME} Error: ${error.message}`,
-        error.response?.data
+        error.response?.data,
       );
       throw new Error(
-        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`
+        `${API_NAME} Error: ${error.response?.status} ${error.response?.data?.error}`,
       );
     }
     throw new Error("Unknown Error");

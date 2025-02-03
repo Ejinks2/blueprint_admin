@@ -16,7 +16,7 @@ const apiClient = axios.create({
 const request = async (
   method: Method,
   url: string,
-  params?: unknown
+  params?: unknown,
 ): Promise<AxiosResponse> => {
   return await apiClient.request({ method, url });
 };
