@@ -15,7 +15,6 @@ import HomeIcon from "./icons/HomeIcon";
 import DashboardIcon from "./icons/Dashboard";
 import BlogIcon from "./icons/BlogIcon";
 import ExpandIcon from "./icons/ExpandIcon";
-import Logo from "../assets/images/logo_negative.png";
 
 function Sidebar(): JSX.Element {
   const [hidden, setHidden] = useState(false);
@@ -36,14 +35,14 @@ function Sidebar(): JSX.Element {
           overflow="hidden"
         >
           <Box>
-            <HStack padding="16px" columnGap="20px">
+            {/* <HStack padding="16px" columnGap="20px">
               <Image
                 src={Logo}
                 alt="Blueprint Logo"
                 boxSize="80px"
                 minWidth="80px"
               ></Image>
-            </HStack>
+            </HStack> */}
             <VStack paddingX="8px" spacing="15px" align="left">
               <ChakraLink
                 as={ReactRouterLink}
