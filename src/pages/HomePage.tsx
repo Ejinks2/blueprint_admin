@@ -1,9 +1,18 @@
-import { Center, Container, HStack, Spinner, Text } from "@chakra-ui/react";
+import {
+  Center,
+  Container,
+  HStack,
+  Spinner,
+  Tab,
+  Text,
+} from "@chakra-ui/react";
 import TableDashboard from "../components/TableDashboard";
 import Sidebar from "../components/Sidebar";
 import React, { useEffect, useState } from "react";
 import { Member } from "../types/member";
 import { getAllMembers } from "../api/lib/member";
+import Events from "../components/Events";
+import { events } from "../data/seed";
 
 function HomePage(): JSX.Element {
   const [members, setMembers] = React.useState<Member[]>([]);
